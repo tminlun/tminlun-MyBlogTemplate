@@ -28,9 +28,9 @@
   <div class="banner">
     <div id="banner" class="fader">
 
-        <li class="slide" ><a href="" target="_blank"><img src="http://wx2.sinaimg.cn/mw690/006biEqily1fw6l966p75j31400qojy6.jpg"><span class="imginfo"></span></a></li>
-      <li class="slide" ><a href="" target="_blank"><img src="//wx3.sinaimg.cn/mw690/006biEqily1fw6l9drgu4j334022o7wo.jpg"><span class="imginfo"></span></a></li>
-      <li class="slide" ><a href="" target="_blank"><img src="//wx4.sinaimg.cn/mw690/006biEqily1fw6l9enrrhj31400qogsh.jpg"><span class="imginfo">个人博客，属于我的小世界！</span></a></li>
+        <li class="slide" ><a href="" target="_blank"><img src="{% static 'images/4.jpg' %}"><span class="imginfo">{# 个人博客 #}</span></a></li>
+      <li class="slide" ><a href="" target="_blank"><img src="{% static 'images/2.jpg' %}"><span class="imginfo"></span></a></li>
+      <li class="slide" ><a href="" target="_blank"><img src="{% static 'images/5.jpg' %}"><span class="imginfo"></span></a></li>
       <div class="fader_controls">
         <div class="page prev" data-target="prev">&lsaquo;</div>
         <div class="page next" data-target="next">&rsaquo;</div>
@@ -41,11 +41,11 @@
   </div>
   <!--banner end-->
   <div class="toppic">
-    <li> <a href="{% url 'info' blog_pk=2 %}" target="_blank"> <i><img src="../../../static/images/1.jpg"></i>
-      <h2>做一个平淡的男孩</h2>
+    <li> <a href="https://space.bilibili.com/252028233/#/" target="_blank"> <i><img src="{% static 'blog/images/Django2.0img.webp' %}"></i>
+      <h2>Django2.0视频教程</h2>
       <span>学无止境</span> </a> </li>
     <li> <a href="/" target="_blank"> <i><img src="../../../static/images/2.jpg"></i>
-      <h2>个人博客，属于我的小世界！</h2>
+      <h2>个人博客，属于我的世界！</h2>
       <span>学无止境</span> </a> </li>
   </div>
   <main>
@@ -82,248 +82,260 @@
   <div class="blogtab">
   <ul id="blogtab">
     <li class="current">最新文章</li>
-    <li><a href="list.html">心得笔记</a></li>
-    <li><a href="list.html">CSS3|Html5</a></li>
-    <li><a href="list.html">网站建设</a></li>
-    <li><a href="list.html">文字标签</a></li>
-    <li><a href="list.html">文字广告</a></li>
+    <li><a href="{# list.html #}">心得笔记</a></li>
+{#    <li><a href="">CSS3|Html5</a></li>#}
+    <li><a href="{% url 'fengmian' %}">学无止境</a></li>
+    <li><a href="{% url 'time' %}">时间轴</a></li>
+{#    <li><a href="">文字广告</a></li>#}
   </ul>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="blogpic"><a href="/" title=""><img src="../../../static/images/1.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
+
+          <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+      <h3 class="blogtitle"><a href="{% url 'info' blog_pk=18 %}">Web前端开发之HTML+CSS|笔记</a></h3>
+      <span class="blogpic"><a href="{% url 'info' blog_pk=18 %}" title=""><img src="//i1.hdslb.com/bfs/archive/c69dead02f2145fc3e0ae942f140c97e6ffc7e8c.jpg@400w_250h.webp" alt=""></a></span>
+      <p class="blogtext">1.行级元素（inline）:不能换行，一行有多个inline，不可以通过css改变宽高，内容决定大小(可以占多行的) ... </p>
       <div class="bloginfo">
         <ul>
-          <li class="author"><a href="/">杨青</a></li>
+          <li class="author"><a href="{% url 'home' %}">田敏伦</a></li>
           <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
+          <li class="timer">2018年10月13日</li>
+{#          <li class="view"><span></span>已阅读</li>#}
+{#          <li class="like">0</li>#}
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+      <h3 class="blogtitle"><a href="{% url 'info' blog_pk=19 %}">GitHub基本操作</a></h3>
+      <p class="blogtext">
+输入指令：git add "文件名称" .
+          <br>
+2.输入指令：git commit -m "解析上传内容"
+          <br>
+3.这一步从本地仓库或本地分支获取并集成(整合)，输入指令：git pull origin master...
+          <br></p>
+      <div class="bloginfo">
+        <ul>
+          <li class="author"><a href="{% url 'home' %}">田敏伦</a></li>
+          <li class="lmname">学无止境</li>
+          <li class="timer">2018-10-13</li>
+{#          <li class="view">已阅读</li>#}
+{#          <li class="like">0</li>#}
         </ul>
       </div>
     </div>
     <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">帝国cms 首页或者列表页 实现图文不同样式调用方法</a></h3>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！...</p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view">4567已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bplist"><a href="/" title="">
-      <li><img src="../../../static/images/2.jpg" alt=""></li>
-      <li><img src="../../../static/images/3.jpg" alt=""></li>
-      <li><img src="../../../static/images/4.jpg" alt=""></li>
+      <h3 class="blogtitle"><a href="{% url 'info' blog_pk=20 %}">JavaScript实现单前页面转跳</a></h3>
+      <span class="bplist"><a href="{% url 'info' blog_pk=20 %}" title="">
+      <li><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2830126898,3910917481&fm=26&gp=0.jpg" alt=""></li>
+      <li><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=09a4b0094b90f60304b09b410129d426/91ef76c6a7efce1b1e30f4f2ae51f3deb48f65ea.jpg" alt=""></li>
+      <li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539456509436&di=8d80c6682d06b7abbeacd1dcd61e5789&imgtype=0&src=http%3A%2F%2Fs3.51cto.com%2Fwyfs02%2FM02%2F6B%2FCB%2FwKiom1U3EwOBaU9xAABAZFOefhU029.jpg" alt=""></li>
       </a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
+      <p class="blogtext">如图... </p>
       <div class="bloginfo">
         <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
+          <li class="author"><a href="{% url 'home' %}">田敏伦</a></li>
+          <li class="lmname">学无止境</li>
+          <li class="timer">2018-10-13</li>
+{#          <li class="view"><span></span>已阅读</li>#}
+{#          <li class="like"></li>#}
         </ul>
       </div>
     </div>
     <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/5.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
+      <h3 class="blogtitle"><a href="{% url 'info' blog_pk=21 %}">月薪五万的IT男 为什么并不开心？</a></h3>
+      <span class="bigpic"><a href="{% url 'info' blog_pk=21 %}" title=""><img src="http://cms-bucket.nosdn.127.net/499c950a70814bda8dd98f6c952f250d20171026120116.png?imageView&thumbnail=280y215" alt=""></a></span>
+      <p class="blogtext">他们的身心正在经历着哪些恶性循环？他们想要的幸福在哪里？他们还有“性”趣吗？... </p>
       <div class="bloginfo">
         <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
+          <li class="author"><a href="{% url 'home' %}">田敏伦</a></li>
+          <li class="lmname">学无止境</li>
           <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
         </ul>
       </div>
     </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="blogpic"><a href="/" title=""><img src="../../../static/images/6.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">帝国cms 首页或者列表页 实现图文不同样式调用方法</a></h3>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！...</p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view">4567已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bplist"><a href="/" title="">
-      <li><img src="../../../static/images/7.jpg" alt=""></li>
-      <li><img src="../../../static/images/8.jpg" alt=""></li>
-      <li><img src="../../../static/images/9.jpg" alt=""></li>
-      </a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/10.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="blogpic"><a href="/" title=""><img src="../../../static/images/1.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">帝国cms 首页或者列表页 实现图文不同样式调用方法</a></h3>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！...</p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view">4567已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bplist"><a href="/" title="">
-      <li><img src="../../../static/images/2.jpg" alt=""></li>
-      <li><img src="../../../static/images/3.jpg" alt=""></li>
-      <li><img src="../../../static/images/4.jpg" alt=""></li>
-      </a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/5.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="blogpic"><a href="/" title=""><img src="../../../static/images/6.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">帝国cms 首页或者列表页 实现图文不同样式调用方法</a></h3>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！...</p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view">4567已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bplist"><a href="/" title="">
-      <li><img src="../../../static/images/7.jpg" alt=""></li>
-      <li><img src="../../../static/images/8.jpg" alt=""></li>
-      <li><img src="../../../static/images/9.jpg" alt=""></li>
-      </a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/10.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
+
+{#      <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="blogpic"><a href="/" title=""><img src="../../../static/images/6.jpg" alt=""></a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">帝国cms 首页或者列表页 实现图文不同样式调用方法</a></h3>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！...</p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view">4567已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="bplist"><a href="/" title="">#}
+{#      <li><img src="../../../static/images/7.jpg" alt=""></li>#}
+{#      <li><img src="../../../static/images/8.jpg" alt=""></li>#}
+{#      <li><img src="../../../static/images/9.jpg" alt=""></li>#}
+{#      </a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/10.jpg" alt=""></a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="blogpic"><a href="/" title=""><img src="../../../static/images/1.jpg" alt=""></a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">帝国cms 首页或者列表页 实现图文不同样式调用方法</a></h3>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！...</p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view">4567已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="bplist"><a href="/" title="">#}
+{#      <li><img src="../../../static/images/2.jpg" alt=""></li>#}
+{#      <li><img src="../../../static/images/3.jpg" alt=""></li>#}
+{#      <li><img src="../../../static/images/4.jpg" alt=""></li>#}
+{#      </a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/5.jpg" alt=""></a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="blogpic"><a href="/" title=""><img src="../../../static/images/6.jpg" alt=""></a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">帝国cms 首页或者列表页 实现图文不同样式调用方法</a></h3>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！...</p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view">4567已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="" target="_blank"></a></h3>#}
+{#      <span class="bplist"><a href="/" title="">#}
+{#      <li><img src="../../../static/images/7.jpg" alt=""></li>#}
+{#      <li><img src="../../../static/images/8.jpg" alt=""></li>#}
+{#      <li><img src="../../../static/images/9.jpg" alt=""></li>#}
+{#      </a></span>#}
+{#      <p class="blogtext">... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/10.jpg" alt=""></a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+
+
 </div>
   </main>
   <aside class="r_box" >
@@ -348,10 +360,9 @@
       <div class="fenlei">
         <h2>文章分类</h2>
         <ul>
-          <li><a href="/">学无止境（33）</a></li>
-          <li><a href="/">日记（19）</a></li>
-          <li><a href="/">慢生活（520）</a></li>
-          <li><a href="/">美文欣赏（40）</a></li>
+            {% for blog_type in blog_types %}
+                <li><a href="{}">{{ blog_type }}（{{ blog_type.type_count }}）</a></li>
+            {% endfor %}
         </ul>
       </div>
       <div class="tuijian">
@@ -400,7 +411,7 @@
   </aside>
 </article>
 <footer>
-  <p>Design by <a href="http://www.yangqq.com" target="_blank">杨青个人博客</a> <a href="/">蜀ICP备11002373号-1</a><a href="/" class="links">友情链接</a></p>
+  <p>Design by <a href="" target="_blank">田敏伦个人博客</a> <a href="/">蜀ICP备722501号-1</a><a href="/" class="links">友情链接</a></p>
 </footer>
 <a href="#" class="cd-top">Top</a>
 {% endblock %}

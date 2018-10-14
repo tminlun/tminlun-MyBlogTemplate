@@ -3,11 +3,9 @@
 {% load staticfiles %}
 {% block nav_fengmian %}selected{% endblock %}
 <title>
-    {% block title_extends %}首页_杨青个人博客 - 一个站在web前端设计之路的女技术员个人博客网站{% endblock %}
+    {% block title_extends %}学无止境{% endblock %}
 </title>
 {% block head_extends %}
-    <meta name="keywords" content="个人博客,杨青个人博客,个人博客模板,杨青" />
-    <meta name="description" content="杨青个人博客，是一个站在web前端设计之路的女程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../../static/css/base.css" rel="stylesheet">
     <link href="../../../static/css/index.css" rel="stylesheet">
@@ -17,6 +15,7 @@
     <script src="../../../static/js/hc-sticky.js"></script>
     <script src="../../../static/js/comm.js"></script>
     <script src="../../../static/js/scrollReveal.js"></script>
+
     <!--[if lt IE 9]>
     <script src="js/modernizr.js"></script>
     <![endif]-->
@@ -36,8 +35,7 @@ obj.id='pagecurrent'
 </script>
       {% for blog in blogs %}
             <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-              <h3 class="blogtitle"><a href="/" target="_blank">{{ blog.title }}</a></h3>
-              <span class="blogpic"><a href="/" title=""><img src="../../../static/images/1.jpg" alt=""></a></span>
+              <h3 class="blogtitle"><a href="{% url 'info' blog.pk %}" target="_blank">{{ blog.title }}</a></h3>
               <p class="blogtext">{{ blog.content|safe|striptags }} </p>
               <div class="bloginfo">
                 <ul>
@@ -49,23 +47,51 @@ obj.id='pagecurrent'
                 </ul>
               </div>
             </div>
+       {% empty %}
+          <div style="margin-top: 3em;">
+            <h3>--暂不博客,敬请期待--</h3>
+          </div>
       {% endfor %}
 
-    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
-      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/10.jpg" alt=""></a></span>
-      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
-      <div class="bloginfo">
-        <ul>
-          <li class="author"><a href="/">杨青</a></li>
-          <li class="lmname"><a href="/">学无止境</a></li>
-          <li class="timer">2018-5-13</li>
-          <li class="view"><span>34567</span>已阅读</li>
-          <li class="like">9999</li>
-        </ul>
-      </div>
-    </div>
-    <div class="pagelist"><a title="Total record">&nbsp;<b>160</b> </a>&nbsp;&nbsp;&nbsp;<b>1</b>&nbsp;<a href="/jstt/index_2.html">2</a>&nbsp;<a href="/jstt/index_3.html">3</a>&nbsp;<a href="/jstt/index_4.html">4</a>&nbsp;<a href="/jstt/index_5.html">5</a>&nbsp;<a href="/jstt/index_6.html">6</a>&nbsp;<a href="/jstt/index_2.html">下一页</a>&nbsp;<a href="/jstt/index_14.html">尾页</a></div>
+{#    <div class="blogs" data-scroll-reveal="enter bottom over 1s" >#}
+{#      <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>#}
+{#      <span class="bigpic"><a href="/" title=""><img src="../../../static/images/10.jpg" alt=""></a></span>#}
+{#      <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>#}
+{#      <div class="bloginfo">#}
+{#        <ul>#}
+{#          <li class="author"><a href="/">杨青</a></li>#}
+{#          <li class="lmname"><a href="/">学无止境</a></li>#}
+{#          <li class="timer">2018-5-13</li>#}
+{#          <li class="view"><span>34567</span>已阅读</li>#}
+{#          <li class="like">9999</li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+    <div class="pagelist">
+        <a title="Total record">&nbsp;<b>{{ blogs.count }}</b> </a>&nbsp;&nbsp;&nbsp;
+        {% if page_of_blogs.has_previous %}
+            <a href="?page={{ page_of_blogs.previous_page_number }}">上一页</a>&nbsp;
+        {% else %}
+            <span>上一页</span>
+        {% endif %}
+        {% for page in page_range %}
+            {% if page == page_of_blogs.number %}
+                <span><b style="color: #3690cf;">{{ page }}</b></span>
+            {% else %}
+                {% if page == '...' %}
+                    <span>{{ page }}</span>
+                 {% else %}
+                    <a href="?page={{ page }}">{{ page }}</a>
+                 {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% if page_of_blogs.has_next %}
+            <a href="?page={{ page_of_blogs.next_page_number }}">下一页</a>&nbsp;
+        {% else %}
+            <span>下一页</span>
+        {% endif %}
+
+    {#        <a href="?page={{ page_of_blogs.paginator.num_pages }}">尾页</a></div>#}
   </main>
   <aside class="r_box" >
       <div class="wdxc">
@@ -113,14 +139,14 @@ obj.id='pagecurrent'
       <div class="guanzhu">
         <h2>关注我 么么哒</h2>
         <ul>
-          <img src="../../../static/images/wx.jpg">
+          <img src="../../../static/images/weipayimg.jpg">
         </ul>
       </div>
 
   </aside>
 </article>
 <footer>
-  <p>Design by <a href="http://www.yangqq.com" target="_blank">杨青个人博客</a> <a href="/">蜀ICP备11002373号-1</a><a href="/" class="links">友情链接</a></p>
+    <p>Design by田敏伦个人博客蜀ICP备722501号-1</p>
 </footer>
 <a href="#" class="cd-top">Top</a>
 

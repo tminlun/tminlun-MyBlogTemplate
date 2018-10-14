@@ -132,3 +132,4 @@ MEDIA_URL = '/media/'#图片传过来的url
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')#传给哪个文件
 CKEDITOR_UPLOAD_PATH = 'upload/'# 在media的子文件：存放照片
 
+COMMON_PAGE_NUMBER = 7
