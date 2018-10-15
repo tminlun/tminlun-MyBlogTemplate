@@ -11,5 +11,4 @@ urlpatterns = [
     # path('date/<int:year>/<int:month>', views.blog_date, name="blog_date"),
 ]
 
-handler404 = 'pm25.views.page_not_found'
-# handler500 = 'pm25.views.page_error'
+

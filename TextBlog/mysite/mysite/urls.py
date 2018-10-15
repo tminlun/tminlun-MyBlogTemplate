@@ -19,6 +19,7 @@ from django.conf import settings
 from django.urls import path,include
 from myblog import urls
 from . import views
+import os
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,7 @@ urlpatterns = [
     path('blog/',include('myblog.urls')),
 
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #文件上传路径
+
+handler404 = 'myblog.views.page_not_found'
+# handler500 = 'pm25.views.page_error'

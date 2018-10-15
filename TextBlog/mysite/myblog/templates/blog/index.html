@@ -28,9 +28,9 @@
   <div class="banner">
     <div id="banner" class="fader">
 
-        <li class="slide" ><a href="" target="_blank"><img src="{% static 'images/4.jpg' %}"><span class="imginfo">{# 个人博客 #}</span></a></li>
-      <li class="slide" ><a href="" target="_blank"><img src="{% static 'images/2.jpg' %}"><span class="imginfo"></span></a></li>
-      <li class="slide" ><a href="" target="_blank"><img src="{% static 'images/5.jpg' %}"><span class="imginfo"></span></a></li>
+        <li class="slide" ><img src="{% static 'images/4.jpg' %}"><span class="imginfo">{# 个人博客 #}</span></li>
+      <li class="slide" ><img src="{% static 'images/2.jpg' %}"><span class="imginfo"></span></li>
+      <li class="slide" ><img src="{% static 'images/5.jpg' %}"><span class="imginfo"></span></li>
       <div class="fader_controls">
         <div class="page prev" data-target="prev">&lsaquo;</div>
         <div class="page next" data-target="next">&rsaquo;</div>
@@ -73,9 +73,9 @@
   </div>
   <div class="pics">
     <ul>
-      <li><i><a href="/news/life/2018-06-17/873.html" target="_blank"><img src="../../../static/images/p1.jpg"></a></i><span>安静地做一个爱设计的女子</span></li>
-      <li><i><a href="/news/life/2018-04-27/816.html" target="_blank"><img src="../../../static/images/p2.jpg"></a></i><span>个人博客，属于我的小世界！（可以是广告）</span></li>
-      <li><i><a href="/jstt/bj/2015-01-09/740.html" target="_blank"><img src="../../../static/images/p3.jpg"></a></i><span>【匆匆那些年】总结个人博客经历的这四年…</span></li>
+      <li><i><img src="../../../static/images/p1.jpg"></i><span>欢迎访问我的博客</span></li>
+      <li><i><img src="../../../static/images/p2.jpg"></i><span>个人博客，属于我的世界！</span></li>
+      <li><i><a href="" target="_blank"><img src="../../../static/images/p3.jpg"></a></i><span></span></li>
     </ul>
   </div>
 
@@ -130,7 +130,8 @@
       <li><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2830126898,3910917481&fm=26&gp=0.jpg" alt=""></li>
       <li><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=09a4b0094b90f60304b09b410129d426/91ef76c6a7efce1b1e30f4f2ae51f3deb48f65ea.jpg" alt=""></li>
       <li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539456509436&di=8d80c6682d06b7abbeacd1dcd61e5789&imgtype=0&src=http%3A%2F%2Fs3.51cto.com%2Fwyfs02%2FM02%2F6B%2FCB%2FwKiom1U3EwOBaU9xAABAZFOefhU029.jpg" alt=""></li>
-      </a></span>
+      </a>
+      </span>
       <p class="blogtext">如图... </p>
       <div class="bloginfo">
         <ul>
@@ -349,19 +350,19 @@
       <div class="wdxc">
         <h2>图片精选</h2>
         <ul>
-          <li><a href="/"><img src="../../../static/images/7.jpg"></a></li>
-          <li><a href="/"><img src="../../../static/images/8.jpg"></a></li>
-          <li><a href="/"><img src="../../../static/images/9.jpg"></a></li>
-          <li><a href="/"><img src="../../../static/images/10.jpg"></a></li>
-          <li><a href="/"><img src="../../../static/images/11.jpg"></a></li>
-          <li><a href="/"><img src="../../../static/images/12.jpg"></a></li>
+          <li><a href="/"><img src="{% static 'blog/images/1.jpg' %}"></a></li>
+          <li><a href="/"><img src="{% static 'blog/images/3.jpg' %}"></a></li>
+          <li><a href="/"><img src="{% static 'blog/images/6.jpg' %}"></a></li>
+          <li><a href="/"><img src="{% static 'blog/images/7.jpg' %}"></a></li>
+          <li><a href="/"><img src="{% static 'blog/images/8.jpg' %}"></a></li>
+          <li><a href="/"><img src="{% static 'blog/images/9.jpg' %}"></a></li>
         </ul>
       </div>
       <div class="fenlei">
         <h2>文章分类</h2>
         <ul>
             {% for blog_type in blog_types %}
-                <li><a href="{}">{{ blog_type }}（{{ blog_type.type_count }}）</a></li>
+                <li><a href="{% url 'blog_type' blog_type.pk %}">{{ blog_type }}（{{ blog_type.type_count }}）</a></li>
             {% endfor %}
         </ul>
       </div>

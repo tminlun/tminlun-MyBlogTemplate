@@ -46,7 +46,7 @@ def info(request,blog_pk):
     context['blog'] = blog
     context['previous_blog'] = Blog.objects.filter(created_time__gt=blog.created_time).last()
     context['next_blog'] = Blog.objects.filter(created_time__lt=blog.created_time).first()
-    context['blog_types'] = BlogType.objects.all()
+    context['blog_types'] = BlogType.objects.annotate(type_count=Count('blog'))
     #阅读数量
     if not request.COOKIES.get('blog_%s_reader'%blog.pk):
         blog.reader_num += 1
@@ -78,6 +78,6 @@ def blog_type(request,type_pk):
 #404页面
 def page_not_found(request,**kwarg):
     from django.shortcuts import render_to_response
-    response = render_to_response('404.html', {})
+    response = render_to_response('blog/Page404.html', {})
     response.status_code = 404
     return response

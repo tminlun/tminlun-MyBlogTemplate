@@ -110,7 +110,7 @@
         <h2>文章分类</h2>
         <ul>
             {% for blog_type in blog_types %}
-                    <li><a href="">{{ blog_type }}（33）</a></li>
+                    <li><a href="{% url 'blog_type' blog_type.pk %}">{{ blog_type }}（{{ blog_type.type_count }}）</a></li>
             {% endfor %}
         </ul>
       </div>
