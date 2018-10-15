@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32ca22a7-8d2e-48d2-b9e4-35c154022dc5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite.zip" beforeDir="false" afterPath="$PROJECT_DIR$/mysite.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/404/css/error.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/css/error.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/404/images/404.png" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/404.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/404/images/404_msg.png" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/404_msg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/404/images/404_to_index.png" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/404_to_index.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/404/images/error_bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/error_bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/404/images/error_cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/error_cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/blog/images/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/blog/images/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/blog/images/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/static/blog/images/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/static/blog/images/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/templates/404/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/templates/blog/Page404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/templates/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/templates/blog/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/templates/blog/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myblog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myblog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="32ca22a7-8d2e-48d2-b9e4-35c154022dc5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +201,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="600" />
     <option name="y" value="15" />
     <option name="width" value="1095" />
@@ -386,15 +365,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.20435968" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.20435968" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.048929665" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49082568" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
